@@ -15,7 +15,11 @@ public class DatasheetController {
     }
 
     @GetMapping("/index")
-    public List<Datasheet> getDatasheets() {
+    public List<Datasheet> getDatasheets(@RequestParam(required = false) String name) {
+        if (name != null) {
+            return datasheetService.getDatasheetsByName(name);
+        }
+
         return datasheetService.getDatasheets();
     }
 }
