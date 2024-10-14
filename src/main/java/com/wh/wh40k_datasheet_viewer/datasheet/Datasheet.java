@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 public class Datasheet {
     @Id
     @Column(name = "id")
-    public Integer id;
+    public String id;
     public String name;
     public String movement;
     public String toughness;
@@ -25,11 +25,11 @@ public class Datasheet {
 
     }
 
-    public Datasheet(Integer id) {
+    public Datasheet(String id) {
         this.id = id;
     }
 
-    public Datasheet(Integer id, String name, String movement, String toughness, String armorSave,
+    public Datasheet(String id, String name, String movement, String toughness, String armorSave,
                      String invulnerableSave, String wounds, String leadership, String objectiveControl,
                      String baseSize) {
         this.id = id;
@@ -44,7 +44,7 @@ public class Datasheet {
         this.baseSize = baseSize;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -84,7 +84,7 @@ public class Datasheet {
         return this.baseSize;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
